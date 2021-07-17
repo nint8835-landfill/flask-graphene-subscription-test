@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "flask-graphene-subscription-test"
+version = "0.1.0"
+description = ""
+authors = ["Riley Flynn <riley@rileyflynn.me>"]
+license = "MIT"
+packages = [
+    { include = "subscription_test" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+black = "^21.7b0"
+isort = "^5.9.2"
+flake8 = "^3.9.2"
+mypy = "^0.910"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
