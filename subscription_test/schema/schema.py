@@ -2,7 +2,7 @@ from typing import Any, List
 
 import graphene
 
-from .users import User, resolve_users
+from .users import CreateUsers, DeleteUsers, User, resolve_users
 
 
 class Query(graphene.ObjectType):
@@ -12,4 +12,9 @@ class Query(graphene.ObjectType):
         return resolve_users(root, info)
 
 
-schema = graphene.Schema(query=Query)
+class Mutation(graphene.ObjectType):
+    create_users = CreateUsers.Field()
+    delete_users = DeleteUsers.Field()
+
+
+schema = graphene.Schema(query=Query, mutation=Mutation)
